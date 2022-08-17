@@ -1,0 +1,66 @@
+2022-03-28 03:14:32,921 INFO    MainThread:50537 [internal.py:wandb_internal():88] W&B internal server running at pid: 50537, started at: 2022-03-28 03:14:32.919744
+2022-03-28 03:14:32,924 DEBUG   HandlerThread:50537 [handler.py:handle_request():124] handle_request: check_version
+2022-03-28 03:14:32,925 INFO    WriterThread:50537 [datastore.py:open_for_write():80] open: /home/ashapiro/Hate_speech_task/Extra_data_offense_osacl/wandb/run-20220328_031431-1ct126y9/run-1ct126y9.wandb
+2022-03-28 03:14:32,930 DEBUG   SenderThread:50537 [sender.py:send():179] send: header
+2022-03-28 03:14:32,930 DEBUG   SenderThread:50537 [sender.py:send_request():193] send_request: check_version
+2022-03-28 03:14:32,942 DEBUG   SenderThread:50537 [sender.py:send():179] send: run
+2022-03-28 03:14:36,334 ERROR   SenderThread:50537 [retry.py:__call__():126] Retry attempt failed:
+Traceback (most recent call last):
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/socket.py", line 918, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/urllib3/connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/urllib3/connectionpool.py", line 382, in _make_request
+    self._validate_conn(conn)
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/urllib3/connectionpool.py", line 1010, in _validate_conn
+    conn.connect()
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7fffd50f2070>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fffd50f2070>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/wandb/sdk/lib/retry.py", line 102, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/wandb/sdk/internal/internal_api.py", line 130, in execute
+    return self.client.execute(*args, **kwargs)
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/wandb/vendor/gql-0.2.0/gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/wandb/vendor/gql-0.2.0/gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/wandb/vendor/gql-0.2.0/gql/transport/requests.py", line 38, in execute
+    request = requests.post(self.url, **post_args)
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/requests/api.py", line 117, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fffd50f2070>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))

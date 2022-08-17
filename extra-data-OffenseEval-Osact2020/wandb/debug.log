@@ -1,0 +1,38 @@
+2022-03-28 03:14:31,568 INFO    MainThread:49839 [wandb_setup.py:_flush():69] setting env: {}
+2022-03-28 03:14:31,569 INFO    MainThread:49839 [wandb_setup.py:_flush():69] setting login settings: {}
+2022-03-28 03:14:31,569 INFO    MainThread:49839 [wandb_init.py:_log_setup():337] Logging user logs to /home/ashapiro/Hate_speech_task/Extra_data_offense_osacl/wandb/run-20220328_031431-1ct126y9/logs/debug.log
+2022-03-28 03:14:31,569 INFO    MainThread:49839 [wandb_init.py:_log_setup():338] Logging internal logs to /home/ashapiro/Hate_speech_task/Extra_data_offense_osacl/wandb/run-20220328_031431-1ct126y9/logs/debug-internal.log
+2022-03-28 03:14:31,570 INFO    MainThread:49839 [wandb_init.py:_jupyter_setup():288] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x7fff6b1d9520>
+2022-03-28 03:14:31,571 INFO    MainThread:49839 [wandb_init.py:init():370] calling init triggers
+2022-03-28 03:14:31,571 INFO    MainThread:49839 [wandb_init.py:init():375] wandb.init called with sweep_config: {}
+config: {}
+2022-03-28 03:14:31,571 INFO    MainThread:49839 [wandb_init.py:init():419] starting backend
+2022-03-28 03:14:31,571 INFO    MainThread:49839 [backend.py:_multiprocessing_setup():70] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2022-03-28 03:14:31,629 INFO    MainThread:49839 [backend.py:ensure_launched():135] starting backend process...
+2022-03-28 03:14:31,681 INFO    MainThread:49839 [backend.py:ensure_launched():139] started backend process with pid: 50537
+2022-03-28 03:14:31,683 INFO    MainThread:49839 [wandb_init.py:init():424] backend started and connected
+2022-03-28 03:14:31,762 INFO    MainThread:49839 [wandb_run.py:_label_probe_notebook():844] probe notebook
+2022-03-28 03:14:31,763 INFO    MainThread:49839 [wandb_run.py:_label_probe_notebook():851] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2022-03-28 03:14:31,763 INFO    MainThread:49839 [wandb_init.py:init():472] updated telemetry
+2022-03-28 03:14:31,764 INFO    MainThread:49839 [wandb_init.py:init():491] communicating current version
+2022-03-28 03:14:32,940 INFO    MainThread:49839 [wandb_init.py:init():496] got version response 
+2022-03-28 03:14:32,941 INFO    MainThread:49839 [wandb_init.py:init():504] communicating run to backend with 30 second timeout
+2022-03-28 03:14:44,800 WARNING MainThread:49839 [wandb_init.py:init():781] interrupted
+Traceback (most recent call last):
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/wandb/sdk/wandb_init.py", line 761, in init
+    run = wi.init()
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/wandb/sdk/wandb_init.py", line 505, in init
+    ret = backend.interface.communicate_run(run, timeout=30)
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 666, in communicate_run
+    return self._communicate_run(run, timeout=timeout)
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 654, in _communicate_run
+    resp = self._communicate(req, timeout=timeout)
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 544, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 82, in get
+    is_set = self._object_ready.wait(timeout)
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/threading.py", line 558, in wait
+    signaled = self._cond.wait(timeout)
+  File "/cm/shared/ebtree/software/Python/3.8.6-GCCcore-10.2.0/lib/python3.8/threading.py", line 306, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt
